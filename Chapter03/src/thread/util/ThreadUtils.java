@@ -1,6 +1,7 @@
-package util;
+package thread.util;
 
-import static util.MyLogger.log;
+
+import static thread.util.MyLogger.log;
 
 public abstract class ThreadUtils {
     public static void sleep(long millis){

@@ -1,6 +1,7 @@
-package util;
+package thread.util;
 
-import static util.MyLogger.log;
+
+import static thread.util.MyLogger.log;
 
 public class MyLoggerMain {
     public static void main(String[] args) {
