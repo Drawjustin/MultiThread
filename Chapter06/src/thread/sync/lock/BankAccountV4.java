@@ -1,32 +1,27 @@
-package sync.lock;
+package thread.sync.lock;
 
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 import static thread.util.MyLogger.log;
 import static thread.util.ThreadUtils.sleep;
 
-public class BankAccountV6 implements BankAccount{
+public class BankAccountV4 implements BankAccount{
     private int balance;
 
     private final Lock lock = new ReentrantLock();
 
-    public BankAccountV6(int initialBalance) {
+    public BankAccountV4(int initialBalance) {
         this.balance = initialBalance;
     }
 
     @Override
     public boolean withdraw(int amount) {
         log("거래 시작: "+getClass().getSimpleName());
-        try {
-            if(!lock.tryLock(500, TimeUnit.MILLISECONDS)){
-                log("[진입 실패] 이미 처리중인 작업이 있습니다.");
-                return false;
-            }
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+
+
+
+        lock.lock(); // ReentrantLock를 이용하여 lock 걸기
 
         try {
 

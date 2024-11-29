@@ -1,4 +1,4 @@
-package sync.lock;
+package thread.sync.lock;
 
 public class WithdrawTask implements Runnable{
     private BankAccount account;

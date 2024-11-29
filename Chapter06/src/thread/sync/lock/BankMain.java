@@ -1,6 +1,4 @@
-package sync.lock;
-
-import java.util.concurrent.locks.Lock;
+package thread.sync.lock;
 
 import static thread.util.MyLogger.log;
 import static thread.util.ThreadUtils.sleep;
